@@ -28,16 +28,10 @@ public class MainActivity extends AppCompatActivity {
     private void mostrarNombreEnOtraActividad(){
         Tareas tareasUno = new Tareas();
 
-
-        tareasUno.setTitulo("Quinta Normal");
-        tareasUno.setDescripcion("pepe cortisona");
-
-
         String titulo = tilTitulo.getEditText().getText().toString();
 
         Intent segundaPantalla = new Intent(this,SegundaActividad.class);
-        segundaPantalla.putExtra("datoTitulo", titulo);
-        segundaPantalla.putExtra("datosComuna",tareasUno);
+        segundaPantalla.putExtra("datosTareas",tareasUno);
 
 
         startActivity(segundaPantalla);
@@ -62,16 +56,19 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else {
                     tilTitulo.setError(null);
-                    mostrarNombreEnOtraActividad();
+                    tilDescripcion.setError(null);
                 }
 
             }
         });
+
+        btnBuscar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mostrarNombreEnOtraActividad();
+            }
+        });
     }
-
-
-
-
 
 
 

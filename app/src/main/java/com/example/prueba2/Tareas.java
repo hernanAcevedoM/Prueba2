@@ -9,6 +9,7 @@ public class Tareas implements Serializable {
     private String descripcion;
 
 
+
     @NonNull
     @Override
     public String toString() {
@@ -31,7 +32,6 @@ public class Tareas implements Serializable {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-
 
 
 }
